@@ -6,7 +6,7 @@ import offer3 from '../../assets/images/offer3.png'
 // import { Link } from 'react-router-dom';
 const Offer = () => {
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+        <div className='grid grid-cols-1 mx-auto px-8 md:grid-cols-2 lg:grid-cols-3 gap-5'>
             <div style={{
                 background: `url(${offer1})`
             }}
