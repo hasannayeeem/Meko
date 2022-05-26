@@ -10,7 +10,7 @@ module.exports = {
           mekotheme: {
             primary: "#058fc5",
             secondary: "#49bad2",
-            accent: "#3A4256",
+            accent: "#003242",
             neutral: "#3d4451",
             "base-100": "#ffffff",
           },
