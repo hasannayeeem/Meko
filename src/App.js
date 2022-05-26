@@ -9,6 +9,13 @@ import SignUp from './Pages/Login/SignUp';
 import NotFound from './Pages/Shared/NotFound';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Purchase from './Pages/Purchase/Purchase';
+import MyReview from './Pages/Dashboard/MyReview';
+import MyProfile from './Pages/Dashboard/MyProfile';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import RequireAdmin from './Pages/Login/RequireAdmin';
+import Users from './Pages/Dashboard/Users';
+import AddProduct from './Pages/Dashboard/AddProduct';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
 
 function App() {
   return (
@@ -25,6 +32,16 @@ function App() {
           </RequireAuth>
         }></Route>
 
+        <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
+          <Route index element={<MyProfile></MyProfile>} ></Route>
+          <Route path='review' element={<MyReview></MyReview>} ></Route>
+          {/* <Route path='history' element={<History></History>} ></Route>
+          <Route path='payment/:id' element={<Payment></Payment>} ></Route> */}
+
+          <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>} ></Route>
+          <Route path='addDoctor' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>} ></Route>
+          <Route path='manageDoctor' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>} ></Route>
+        </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
