@@ -6,7 +6,6 @@ const Product = ({ product }) => {
     if (!product.length) {
         <Loading></Loading>
     }
-    console.log(product);
     const {_id, name, description, minimumOrderQuantity, availableQuantity, price, img } = product;
 
     return (

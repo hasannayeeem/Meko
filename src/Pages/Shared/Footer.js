@@ -5,7 +5,7 @@ const Footer = () => {
 
 
         <footer className="">
-            <div className='grid grid-cols-3 p-20 bg-accent text-white'>
+            <div className='grid grid-cols-1 gap-10 p-20 bg-accent text-white lg:grid-cols-3'>
                 <div className=''>
                     <span className="footer-title opacity-100 text-white">About Us</span>
                     <p className="text-white  mb-3 ml-3">
