@@ -11,23 +11,28 @@ const Dashboard = () => {
         <div className="drawer drawer-mobile">
             <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content ">
-                <h2 className='text-2xl font-bold text-purple-500'>Welcome to your Dashboard</h2>
+                <h3>Hello <span className='text-green-600'>{user.displayName}</span></h3>
+                <h2 className='text-2xl font-bold text-accent'>Welcome to your Dashboard</h2>
                 <Outlet></Outlet>
 
             </div>
             <div className="drawer-side">
                 <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
                 <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
-                    {/* <!-- Sidebar content here --> */}
                     <li><Link to='/dashboard'>My Profile</Link></li>
-                    <li><Link to='/dashboard/review'>My Reviews</Link></li>
-                    <li><Link to='/dashboard/orders'>My Orders</Link></li>
-                    { admin && <>
-                        <li><Link to='/dashboard/users'>All Users</Link></li>
-                        <li><Link to='/dashboard/addDoctor'>Add a Product</Link></li>
-                        <li><Link to='/dashboard/manageDoctor'>Manage Product</Link></li>
+                    {admin ? <>
+                        <li><Link to='/dashboard/addProduct'>Add a Product</Link></li>
+                        <li><Link to='/dashboard/manageProducts'>Manage Products</Link></li>
+                        <li><Link to='/dashboard/users'>Make Admin</Link></li>
+                        <li><Link to='/dashboard/manageOrders'>Manage Orders</Link></li>
+                    </>
+                    :
+                    <>
+                        <li><Link to='/dashboard/review'>Add Review</Link></li>
+                        <li><Link to='/dashboard/orders'>My Orders</Link></li>
+                    </>    
 
-                    </>}
+                    }
                 </ul>
 
             </div>

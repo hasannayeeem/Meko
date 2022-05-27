@@ -41,8 +41,8 @@ function App() {
           {/* <Route path='payment/:id' element={<Payment></Payment>} ></Route> */}
 
           <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>} ></Route>
-          <Route path='addDoctor' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>} ></Route>
-          <Route path='manageDoctor' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>} ></Route>
+          <Route path='addProduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>} ></Route>
+          <Route path='manageProducts' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>} ></Route>
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
