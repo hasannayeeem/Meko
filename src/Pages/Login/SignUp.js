@@ -19,8 +19,7 @@ const SignUp = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [token] = useToken(user || gUser);
     const navigate = useNavigate();
-    const location = useLocation();
-    let from = location.state?.from?.pathname || '/';
+    
 
     if (loading || gLoading || updating) {
         return <Loading></Loading>
@@ -33,7 +32,7 @@ const SignUp = () => {
     //     console.log(user || gUser);
     // }
     if(token){
-        navigate(from, {replace: true});
+        navigate('/home');
     }
     const onSubmit = async data => {
         console.log(data);

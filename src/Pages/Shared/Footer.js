@@ -4,10 +4,10 @@ const Footer = () => {
     return (
 
 
-        <footer class="">
+        <footer className="">
             <div className='grid grid-cols-3 p-20 bg-accent text-white'>
                 <div className=''>
-                    <span class="footer-title opacity-100 text-white">About Us</span>
+                    <span className="footer-title opacity-100 text-white">About Us</span>
                     <p className="text-white  mb-3 ml-3">
                         Pellentesque posuere orci lobortis scelerisque blandit. Donec id tellus lacinia an, tincidunt risus ac, consequat velit. Quisquemos sodales suscipit tortor ditaemcos condimentum lacus meleifend.
                     </p>
@@ -21,27 +21,27 @@ const Footer = () => {
                     </div>
                 </div>
                 <div  className=''>
-                    <span class="footer-title opacity-100 block text-white">Opening Hours</span>
-                    <a class="text-white block">Monday ---------------- 09.00 - 22.00</a>
-                    <a class="text-white block">Tuesday ---------------- 09.00 - 22.00</a>
-                    <a class="text-white block">Wednesday ------------ 09.00 - 22.00</a>
-                    <a class="text-white block">Thursday --------------- 09.00 - 22.00</a>
-                    <a class="text-white block">Friday ------------------ 09.00 - 22.00</a>
-                    <a class="text-white block">Saturday --------------- 09.00 - 22.00</a>
-                    <a class="text-white block">Sunday ----------------- 09.00 - 22.00</a>
+                    <span className="footer-title opacity-100 block text-white">Opening Hours</span>
+                    <a className="text-white block">Monday ---------------- 09.00 - 22.00</a>
+                    <a className="text-white block">Tuesday ---------------- 09.00 - 22.00</a>
+                    <a className="text-white block">Wednesday ------------ 09.00 - 22.00</a>
+                    <a className="text-white block">Thursday --------------- 09.00 - 22.00</a>
+                    <a className="text-white block">Friday ------------------ 09.00 - 22.00</a>
+                    <a className="text-white block">Saturday --------------- 09.00 - 22.00</a>
+                    <a className="text-white block">Sunday ----------------- 09.00 - 22.00</a>
                 </div>
                 <div  className=''>
-                    <span class="footer-title opacity-100 block text-white">Contact us</span>
+                    <span className="footer-title opacity-100 block text-white">Contact us</span>
                     <span className='text-white block'>support@domain.com</span>
                     <div>
-                        <span class="footer-title opacity-100 text-white">Newsletter</span>
-                        <div class="form-control w-80">
-                            <label class="label">
-                                <span class="label-text text-white">Enter your email address</span>
+                        <span className="footer-title opacity-100 text-white">Newsletter</span>
+                        <div className="form-control w-80">
+                            <label className="label">
+                                <span className="label-text text-white">Enter your email address</span>
                             </label>
-                            <div class="relative">
-                                <input type="text" placeholder="username@site.com" class="input input-bordered w-full pr-16" />
-                                <button class="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+                            <div className="relative">
+                                <input type="text" placeholder="username@site.com" className="input input-bordered w-full pr-16" />
+                                <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
                             </div>
                         </div>
                     </div>

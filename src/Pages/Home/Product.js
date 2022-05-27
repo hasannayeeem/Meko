@@ -10,12 +10,12 @@ const Product = ({ product }) => {
     const {_id, name, description, minimumOrderQuantity, availableQuantity, price, img } = product;
 
     return (
-        <div class="lg:max-w-lg py-5">
-            <figure class="">
-                <img src={img} alt={name} class=" w-60 h-60 rounded-xl" />
+        <div className="lg:max-w-lg py-5">
+            <figure className="">
+                <img src={img} alt={name} className=" w-60 h-60 rounded-xl" />
             </figure>
-            <div class=" text-left">
-                <h2 class="text-2xl">{name}</h2>
+            <div className=" text-left">
+                <h2 className="text-2xl">{name}</h2>
                 <p><small>{description}</small></p>
                 <p><small>Minimum Order Quantity:</small> {minimumOrderQuantity}</p>
                 <p><small>Available Quantity:</small> {availableQuantity}</p>
