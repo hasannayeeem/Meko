@@ -10,7 +10,7 @@ const ProductRow = ({index,product, products, setProducts}) => {
     const handleDelete = id => {
         const proceed = window.confirm('are you sure?');
         if(proceed){
-            const url = `http://localhost:1010/products/${id}`;
+            const url = `https://ancient-bayou-13762.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
