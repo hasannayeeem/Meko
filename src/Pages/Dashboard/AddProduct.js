@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -14,22 +15,23 @@ const AddProduct = () => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(result => {
-                console.log(result);
+            .then(inserted => {
+                if(inserted.insertedId){
+                    toast.success('Product added successfully')
+                    reset();
+                }
+                else{
+                    toast.error('Failed to add the Product');
+                    reset();
+                }
             })
-        reset();
     };
+
     return (
-        <div className='w-50 mx-auto py-5'>
-            <h2 className='about-h'>Please Add Your Product</h2>
+        <div className='w-100 mx-auto py-5'>
+            <h2 className='text-xl font-semibold text-accent'>Please Add Your Product</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
-                <input className='mb-2' placeholder='Photo URL' type="text" {...register("img")} />
-                <input className='mb-2' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
-                <textarea className='mb-2' placeholder='Description' {...register("description")} />
-                <input className='mb-2' placeholder='Price' type="number" {...register("price")} />
-                <input className='mb-2' placeholder='Min-Order Quantity' type="number" {...register("minimumOrderQuantity")} />
-                <input className='mb-2' placeholder='Quantity' type="number" {...register("availableQuantity")} />
-                <div className="form-control w-full max-w-xs">
+            <div className="form-control w-full max-w-xs">
                     <input
                         type="text"
                         placeholder="Your Name"
@@ -47,28 +49,86 @@ const AddProduct = () => {
                 </div>
                 
                 <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Email</span>
-                    </label>
                     <input
-                        type="email"
-                        placeholder="Your Email"
+                        type="number"
+                        placeholder="Price"
                         className="input input-bordered w-full max-w-xs"
-                        {...register("email", {
+                        {...register("price", {
                             required: {
                                 value: true,
-                                message: 'Email is Required'
-                            },
-                            pattern: {
-                                value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                                message: 'Provide a valid email'
+                                message: 'Price is Required'
                             }
                         })}
                     />
                     <label className="label">
-                        {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                        {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                        {errors.price?.type === 'required' && <span className="label-text-alt text-red-500">{errors.price?.message}</span>}
+                    </label>
+                </div>
 
+                <div className="form-control w-full max-w-xs">
+                    <input
+                        type="number"
+                        placeholder="Minimum Order Quantity"
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("minimumOrderQuantity", {
+                            required: {
+                                value: true,
+                                message: 'minimum quantity is Required'
+                            }
+                        })}
+                    />
+                    <label className="label">
+                        {errors.minimumOrderQuantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors.minimumOrderQuantity?.message}</span>}
+                    </label>
+                </div>
+
+                <div className="form-control w-full max-w-xs">
+                    <input
+                        type="number"
+                        placeholder="Quantity"
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("availableQuantity", {
+                            required: {
+                                value: true,
+                                message: 'quantity is Required'
+                            }
+                        })}
+                    />
+                    <label className="label">
+                        {errors.availableQuantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors.availableQuantity?.message}</span>}
+                    </label>
+                </div>
+                
+                <div className="form-control w-full max-w-xs">
+                    <input
+                        type="text"
+                        placeholder='PHOTO URL'
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("img", {
+                            required: {
+                                value: true,
+                                message: 'Image is Required'
+                            }
+                        })}
+                    />
+                    <label className="label">
+                        {errors.img?.type === 'required' && <span className="label-text-alt text-red-500">{errors.img?.message}</span>}
+                    </label>
+                </div>
+                <div className="form-control w-full max-w-xs">
+                    <textarea
+                        type="text"
+                        placeholder='Description'
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("description", {
+                            required: {
+                                value: true,
+                                message: 'description is Required'
+                            }
+                        })}
+                    />
+                    <label className="label">
+                        {errors.description?.type === 'required' && <span className="label-text-alt text-red-500">{errors.description?.message}</span>}
                     </label>
                 </div>
                 <input className="btn w-full max-w-xs text-white" type="submit" value="Add Product" />
