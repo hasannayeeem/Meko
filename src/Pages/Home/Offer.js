@@ -26,7 +26,7 @@ const Offer = () => {
                     <h1 className="card-title text-5xl text-black">Save 20%</h1>
                     <h1 className='text-primary text-3xl'>On Every Order</h1>
                     <p className='text-black mb-5 text-xl'>Medical Supplies and Equipment</p>
-                    <a href='/' className='text-white bg-gradient-to-r from-secondary to-primary text-xl inline-block p-3 rounded-full w-40 text-center'>Shop Now</a>
+                    <a href='/' className=' text-white bg-gradient-to-l from-secondary to-primary hover:bg-gradient-to-r from-primary to-secondary text-xl inline-block p-3 rounded-full w-40 text-center'>Shop Now</a>
                 </div>
             </div>
             <div style={{
