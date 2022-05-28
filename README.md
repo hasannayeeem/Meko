@@ -17,6 +17,6 @@ in this website create few routes for admins there are powerful option like mana
 develop a payment system with stripe by this system users will payment his products bill with mastercard visacard etc.
 - `adding blog`
 in this website added 6 special question and answer.
-
+a
 ##
 in this website used tailwind-css, daisy, react-router-dom@6, firebase(authentication) database mongodb express etc...
