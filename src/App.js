@@ -9,7 +9,6 @@ import SignUp from './Pages/Login/SignUp';
 import NotFound from './Pages/Shared/NotFound';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Purchase from './Pages/Purchase/Purchase';
-import MyReview from './Pages/Dashboard/MyReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import RequireAdmin from './Pages/Login/RequireAdmin';
@@ -18,6 +17,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageProducts from './Pages/Dashboard/ManageProducts';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import { ToastContainer } from 'react-toastify';
+import AddReview from './Pages/Dashboard/AddReview';
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
 
         <Route path='/dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<MyProfile></MyProfile>} ></Route>
-          <Route path='review' element={<MyReview></MyReview>} ></Route>
+          <Route path='addReview' element={<AddReview></AddReview>} ></Route>
           <Route path='orders' element={<MyOrders></MyOrders>} ></Route>
           {/* <Route path='payment/:id' element={<Payment></Payment>} ></Route> */}
 

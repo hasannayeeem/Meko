@@ -11,6 +11,9 @@ const ProductDetail = () => {
     const [product] = useProductDetail(productId);
     const [user] = useAuthState(auth);
     const { _id, name, img, description, availableQuantity, minimumOrderQuantity, price } = product;
+    const handleOrder = () =>{
+
+    }
     return (
         <div className="hero min-h-screen bg-base-200">
 
@@ -21,7 +24,7 @@ const ProductDetail = () => {
                         <input type="email" name='email' disabled value={user?.email || ''} placeholder="Email Address" className="input input-bordered w-full max-w-xs" />
                         <input type="number" name='phone' placeholder="Phone Number" className="input input-bordered w-full max-w-xs" />
                         <input type="text" name='address' placeholder="Address" className="input input-bordered w-full max-w-xs" />
-                        <img className='lg:hidden w-72 h-32 rounded-xl' src={img} alt={img}/>
+                        <img className='lg:hidden w-80 h-48 rounded-xl' src={img} alt={img}/>
                     </div>
                 <div class="card-body">
                 <h1 className="text-2xl font-bold">{name}</h1>
@@ -29,12 +32,11 @@ const ProductDetail = () => {
                     <p className="py-2">In Stock: {availableQuantity}</p>
                     <p className="py-2">Min-order{minimumOrderQuantity}</p>
                     <div className='flex'>
-                        <button className="btn btn-default"><FontAwesomeIcon icon={faMinus}></FontAwesomeIcon></button>
+                        <button className="btn btn-primary"><FontAwesomeIcon icon={faMinus}></FontAwesomeIcon></button>
                         <input type="number" min="100" name="quantity" className="text-center" value={minimumOrderQuantity || ''} />
-                        <button className="btn btn-default"><FontAwesomeIcon icon={faPlus}></FontAwesomeIcon></button>
-                    </div>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary rounded-full font-bold uppercase text-white bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-l from-primary to-secondary">checkoout</button>
+                        <button className="btn btn-primary"><FontAwesomeIcon className='' icon={faPlus}></FontAwesomeIcon></button>
+                     
+                        <input onClick={handleOrder} class="btn btn-primary rounded-full font-bold uppercase text-white bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-l from-primary to-secondary" value="checkoout"></input>
                     </div>
                 </div>
             </div>

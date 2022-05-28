@@ -2,11 +2,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
-const AddProduct = () => {
+const AddReview = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:1010/products`;
+        const url = `http://localhost:1010/reviews`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -29,7 +29,7 @@ const AddProduct = () => {
 
     return (
         <div className='w-100 mx-auto py-5'>
-            <h2 className='text-xl font-semibold text-accent'>Please Add Your Product</h2>
+            <h2 className='text-xl mb-2 font-semibold text-accent'>Add Your Review</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full max-w-xs">
                     <input
@@ -50,52 +50,18 @@ const AddProduct = () => {
                 
                 <div className="form-control w-full max-w-xs">
                     <input
-                        type="number"
-                        placeholder="Price"
+                        type="text"
+                        placeholder="Your Address"
                         className="input input-bordered w-full max-w-xs"
-                        {...register("price", {
+                        {...register("location", {
                             required: {
                                 value: true,
-                                message: 'Price is Required'
+                                message: 'Address is Required'
                             }
                         })}
                     />
                     <label className="label">
-                        {errors.price?.type === 'required' && <span className="label-text-alt text-red-500">{errors.price?.message}</span>}
-                    </label>
-                </div>
-
-                <div className="form-control w-full max-w-xs">
-                    <input
-                        type="number"
-                        placeholder="Minimum Order Quantity"
-                        className="input input-bordered w-full max-w-xs"
-                        {...register("minimumOrderQuantity", {
-                            required: {
-                                value: true,
-                                message: 'minimum quantity is Required'
-                            }
-                        })}
-                    />
-                    <label className="label">
-                        {errors.minimumOrderQuantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors.minimumOrderQuantity?.message}</span>}
-                    </label>
-                </div>
-
-                <div className="form-control w-full max-w-xs">
-                    <input
-                        type="number"
-                        placeholder="Quantity"
-                        className="input input-bordered w-full max-w-xs"
-                        {...register("availableQuantity", {
-                            required: {
-                                value: true,
-                                message: 'quantity is Required'
-                            }
-                        })}
-                    />
-                    <label className="label">
-                        {errors.availableQuantity?.type === 'required' && <span className="label-text-alt text-red-500">{errors.availableQuantity?.message}</span>}
+                        {errors.location?.type === 'required' && <span className="label-text-alt text-red-500">{errors.location?.message}</span>}
                     </label>
                 </div>
                 
@@ -118,9 +84,9 @@ const AddProduct = () => {
                 <div className="form-control w-full max-w-xs">
                     <textarea
                         type="text"
-                        placeholder='Description'
+                        placeholder='write your review'
                         className="input input-bordered w-full max-w-xs"
-                        {...register("description", {
+                        {...register("review", {
                             required: {
                                 value: true,
                                 message: 'description is Required'
@@ -128,13 +94,13 @@ const AddProduct = () => {
                         })}
                     />
                     <label className="label">
-                        {errors.description?.type === 'required' && <span className="label-text-alt text-red-500">{errors.description?.message}</span>}
+                        {errors.review?.type === 'required' && <span className="label-text-alt text-red-500">{errors.review?.message}</span>}
                     </label>
                 </div>
-                <input className="btn w-full max-w-xs text-white bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-l from-primary to-secondary" type="submit" value="Add Product" />
+                <input className="btn w-full max-w-xs bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-l from-primary to-secondary text-white" type="submit" value="Add Review" />
             </form>
         </div>
     );
 };
 
-export default AddProduct;
+export default AddReview;
