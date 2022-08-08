@@ -12,13 +12,15 @@ import Purchase from './Pages/Purchase/Purchase';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import RequireAdmin from './Pages/Login/RequireAdmin';
-import Users from './Pages/Dashboard/Users';
-import AddProduct from './Pages/Dashboard/AddProduct';
-import ManageProducts from './Pages/Dashboard/ManageProducts';
-import MyOrders from './Pages/Dashboard/MyOrders';
+import Users from './Pages/Dashboard/forAdmin/Users';
+import AddProduct from './Pages/Dashboard/forAdmin/AddProduct';
+import ManageProducts from './Pages/Dashboard/forAdmin/ManageProducts';
+import MyOrders from './Pages/Dashboard/forUser/MyOrders';
 import { ToastContainer } from 'react-toastify';
-import AddReview from './Pages/Dashboard/AddReview';
+import AddReview from './Pages/Dashboard/forUser/AddReview';
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
+import AllOrders from './Pages/Dashboard/forAdmin/AllOrders';
+import Payment from './Pages/Dashboard/forUser/Payment';
 
 function App() {
   return (
@@ -40,11 +42,12 @@ function App() {
           <Route index element={<MyProfile></MyProfile>} ></Route>
           <Route path='addReview' element={<AddReview></AddReview>} ></Route>
           <Route path='orders' element={<MyOrders></MyOrders>} ></Route>
-          {/* <Route path='payment/:id' element={<Payment></Payment>} ></Route> */}
+          <Route path='payment/:id' element={<Payment></Payment>} ></Route>
 
           <Route path='users' element={<RequireAdmin><Users></Users></RequireAdmin>} ></Route>
           <Route path='addProduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>} ></Route>
           <Route path='manageProducts' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>} ></Route>
+          <Route path='manageOrders' element={<RequireAdmin><AllOrders></AllOrders></RequireAdmin>} ></Route>
         </Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>

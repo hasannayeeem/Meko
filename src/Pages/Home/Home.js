@@ -7,6 +7,7 @@ import Offer from './Offer';
 import Product from './Product';
 import Products from './Products';
 import SecondaryBanner from './SecondaryBanner';
+import Subscribe from './Subscribe';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Products></Products>
             <SecondaryBanner></SecondaryBanner>
             <Testimonials></Testimonials>
+            <Subscribe></Subscribe>
             <BusinessSummury></BusinessSummury>
         </div>
     );

@@ -6,7 +6,7 @@ const Testimonials = () => {
     const [reviews] = useReviews();
     
     return (
-        <section  className='my-28 px-20'>
+        <section  className='my-28 lg:px-20 px-10'>
             <div  className='flex justify-between'>
                 <div>
                     <h4  className='text-xl text-primary font-bold'>Testimonials</h4>

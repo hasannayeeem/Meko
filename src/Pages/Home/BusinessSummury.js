@@ -1,5 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-
+import { faUser, faUsers} from '@fortawesome/free-solid-svg-icons'
 const BusinessSummury = () => {
     return (
         <div className='text-center pb-20 py-8'>
@@ -22,11 +23,11 @@ const BusinessSummury = () => {
                     <div className="stat-desc">21% more than last month</div>
                 </div>
                 <div className="stat">
-                    <div className="stat-title">Page Views</div>
-                    <div className="stat-value text-secondary">2.6M</div>
-                    <div className="stat-desc">21% more than last month</div>
+                    <div className="stat-title">Happy Clients</div>
+                    <div className="stat-value text-secondary">73+</div>
+                    <div className="stat-desc">41% more than last month</div>
                     <div className="stat-figure text-secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-8 h-8 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <FontAwesomeIcon icon={faUsers}></FontAwesomeIcon>
                     </div>
                 </div>
 

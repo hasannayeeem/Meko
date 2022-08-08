@@ -14,13 +14,13 @@ const Product = ({ product }) => {
                 <img src={img} alt={name} className=" w-60 h-60 rounded-xl" />
             </figure>
             <div className=" text-left">
-                <h2 className="text-2xl">{name}</h2>
+                <h2 className="text-2xl text-accent">{name}</h2>
                 <p><small>{description}</small></p>
                 <p><small>Minimum Order Quantity:</small> {minimumOrderQuantity}</p>
                 <p><small>Available Quantity:</small> {availableQuantity}</p>
                 <p>Price: ${price}</p>
                 <Link to={`/purchase/${_id}`} className='d-block'>
-                    <button className='w-50 font-bold py-1'>Book Now</button>
+                    <button className='w-50 font-bold text-accent text-gradient-to-l from-secondary to-primary hover:text-gradient-to-r from-primary to-secondary py-1'>Book Now</button>
                 </Link>
             </div>
         </div>
