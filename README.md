@@ -2,6 +2,10 @@
 
 Click here for seeing [This website](https://sobtool.web.app/).
 
+## Admin Credential
+Email: ph@hn.com
+Password: 123123
+
 ## Live link
 
 Click here: [https://sobtool.web.app/](https://sobtool.web.app/)

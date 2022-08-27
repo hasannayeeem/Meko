@@ -8,6 +8,7 @@ import Product from './Product';
 import Products from './Products';
 import SecondaryBanner from './SecondaryBanner';
 import Subscribe from './Subscribe';
+import Projects from './Projects';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Offer></Offer>
             <Products></Products>
             <SecondaryBanner></SecondaryBanner>
+            {/* <Projects></Projects> */}
             <Testimonials></Testimonials>
             <Subscribe></Subscribe>
             <BusinessSummury></BusinessSummury>
