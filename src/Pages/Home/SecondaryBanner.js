@@ -4,7 +4,7 @@ import Banner1 from '../../assets/images/Banner1.png';
 const SecondaryBanner = () => {
     return (
         <div  style={{
-            background: `url(${Banner1})`
+            background: `url(${Banner1})`,
         }} className="hero bg-no-repeat bg-cover px-12">
             <div  className="hero-content  flex-col lg:flex-row-reverse">
                 <div  className='p-18 w-50 text-white lg:ml-96 h-96'>
