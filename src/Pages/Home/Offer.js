@@ -15,7 +15,7 @@ const Offer = () => {
                     <h1 className="text-3xl text-black font-bold">20% Off</h1>
                     <h1 className="text-4xl text-white font-bold">Hand Wipes</h1>
                     <p className='mb-5 text-xl'>Dont miss your chance to be the first !</p>
-                    <a href="/" className='text-xl'>Shop Now</a>
+                    <a href="/products" className='text-xl'>Shop Now</a>
                 </div>
             </div>
             <div style={{
@@ -26,7 +26,7 @@ const Offer = () => {
                     <h1 className="card-title text-5xl text-black">Save 20%</h1>
                     <h1 className='text-primary text-3xl'>On Every Order</h1>
                     <p className='text-black mb-5 text-xl'>Medical Supplies and Equipment</p>
-                    <a href='/' className=' text-white bg-gradient-to-l from-secondary to-primary hover:bg-gradient-to-r from-primary to-secondary text-xl inline-block p-3 rounded-full w-40 text-center'>Shop Now</a>
+                    <a href='/products' className=' text-white bg-gradient-to-l from-secondary to-primary hover:bg-gradient-to-r from-primary to-secondary text-xl inline-block p-3 rounded-full w-40 text-center'>Shop Now</a>
                 </div>
             </div>
             <div style={{
@@ -37,7 +37,7 @@ const Offer = () => {
                     <h1 className="text-3xl text-black font-bold">Big Sale</h1>
                     <h1 className="text-4xl text-white font-bold">Babe Diabers</h1>
                     <p className='mb-5 text-xl'>Save upto 20%</p>
-                    <a href="/" className='text-xl'>Shop Now</a>
+                    <a href="/products" className='text-xl'>Shop Now</a>
                 </div>
             </div>
         </div>

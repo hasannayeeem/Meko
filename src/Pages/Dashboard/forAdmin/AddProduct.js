@@ -28,13 +28,14 @@ const AddProduct = () => {
     };
 
     return (
-        <div className='w-100 mx-auto py-5'>
+        <div className='w-full '>
+            <div className='lg:w-4/12 border shadow-md lg:mx-40 mx-2 my-4 px-8 py-5'>
             <h2 className='text-xl font-semibold text-accent'>Please Add Your Product</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full max-w-xs">
                     <input
                         type="text"
-                        placeholder="Your Name"
+                        placeholder="Product Name"
                         className="input input-bordered w-full max-w-xs"
                         {...register("name", {
                             required: {
@@ -133,6 +134,7 @@ const AddProduct = () => {
                 </div>
                 <input className="btn w-full max-w-xs text-white bg-gradient-to-r from-secondary to-primary hover:bg-gradient-to-l from-primary to-secondary" type="submit" value="Add Product" />
             </form>
+        </div>
         </div>
     );
 };

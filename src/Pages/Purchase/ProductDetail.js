@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import { ToastContainer } from 'react-toastify';
 import useOrders from '../hooks/useOrders';
 import useProductDetail from '../hooks/useProductDetail';
 import useUser from '../hooks/useUser';
@@ -22,7 +23,7 @@ const ProductDetail = () => {
     const navigate = useNavigate();
     useEffect(() => {
         setOrderQuantity(minimumOrderQuantity);
-    }, [user, _id]);
+    }, [user, minimumOrderQuantity, _id]);
     const increaseOrderQuantity = (event) => {
         event.preventDefault();
         setOrderQuantity(parseInt(orderQuantity) + 1);
@@ -72,6 +73,7 @@ const ProductDetail = () => {
 
     return (
         <div className="hero min-h-screen bg-base-200 py-12">
+            <ToastContainer />
             <div className="card lg:card-side bg-base-100 shadow-xl">
                 <div className="card-body">
                     <img className='w-72 h-72 hidden  lg:block rounded-xl' src={img} alt={img} />
@@ -87,7 +89,12 @@ const ProductDetail = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className='flex py-3 items-center'>
                             <FontAwesomeIcon onClick={decreaseOrderQuantity} className='bg-primary p-2 rounded text-white' icon={faMinus}></FontAwesomeIcon>
-                            <input type="number" min={minimumOrderQuantity} max={availableQuantity} className="text-center border-none p-1" defaultValue={orderQuantity} placeholder='100' {...register("quantity")} />
+                            <input type="number" min={minimumOrderQuantity} max={availableQuantity} className="text-center border-none p-1" defaultValue={orderQuantity} placeholder='' {...register("quantity", {
+                                    required: {
+                                        value: true,
+                                        message: 'Quantity is Required'
+                                    }
+                                })} />
                             <button onClick={increaseOrderQuantity}><FontAwesomeIcon className='bg-primary p-2 rounded text-white' icon={faPlus}></FontAwesomeIcon></button>
                         </div>
                         <div className="form-control w-full max-w-xs">

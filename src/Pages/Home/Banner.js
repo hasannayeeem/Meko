@@ -4,7 +4,7 @@ const Banner = () => {
     return (
         <div className="carousel w-full">
             <div id="slide1" className="carousel-item relative w-full">
-                <img src="https://cdn.shopify.com/s/files/1/0046/1769/9457/files/bg1.jpg?v=1594367238" className="max-w-full h-96" alt='' />
+                <img src="https://cdn.shopify.com/s/files/1/0046/1769/9457/files/bg1.jpg?v=1594367238" className="max-w-full" alt='' />
                 <div className='absolute flex justify-center transform -translate-y-1/2 left-5 right-5 top-1/2'>
                     <div className='mx-auto w-full'>
                         <div className='w-6/12 lg:pl-32 mx-auto'>
